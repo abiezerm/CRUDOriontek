@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B4BAE1E-6A8D-479D-A9E9-1FE22D5392B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SGClaves</RootNamespace>
+    <AssemblyName>SGClaves</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Edeeste.IRepository, Version=1.1.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Edeeste.IRepository.1.2.1.7\lib\net45\Edeeste.IRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Edeeste.IRepository.Attribute, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Edeeste.IRepository.Attribute.1.2.0.1\lib\net45\Edeeste.IRepository.Attribute.dll</HintPath>
+    </Reference>
+    <Reference Include="Edeeste.Security.Framework">
+      <HintPath>..\packages\Edeeste.Security.1.0.2.9\lib\net45\Edeeste.Security.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Edeeste.Security.IFramework">
+      <HintPath>..\packages\Edeeste.Security.1.0.2.9\lib\net45\Edeeste.Security.IFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotation\FiledNameAttribute.cs" />
+    <Compile Include="CompositionRoot.cs" />
+    <Compile Include="General\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\IAlertMessageView.cs" />
+    <Compile Include="General\ObjectCallBack.cs" />
+    <Compile Include="General\PresenterBase.cs" />
+    <Compile Include="General\PresenterFactory.cs" />
+    <Compile Include="Mantenimiento\FormComunicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormComunicaciones.Designer.cs">
+      <DependentUpon>FormComunicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormConfMedidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormConfMedidor.Designer.cs">
+      <DependentUpon>FormConfMedidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormDepartamentos.Designer.cs">
+      <DependentUpon>FormDepartamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormDescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormDescripcion.Designer.cs">
+      <DependentUpon>FormDescripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormModelo.Designer.cs">
+      <DependentUpon>FormModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormRegistroMedidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormRegistroMedidor.Designer.cs">
+      <DependentUpon>FormRegistroMedidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormRegistroOficina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormRegistroOficina.Designer.cs">
+      <DependentUpon>FormRegistroOficina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormTipoCondicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormTipoCondicion.Designer.cs">
+      <DependentUpon>FormTipoCondicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormTipoCondicionPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormTipoCondicionPrueba.Designer.cs">
+      <DependentUpon>FormTipoCondicionPrueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\FormValidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\FormValidacion.Designer.cs">
+      <DependentUpon>FormValidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\ComunicacionModel.cs" />
+    <Compile Include="Modelos\CondicionModel.cs" />
+    <Compile Include="Modelos\CondicionPruebaModel.cs" />
+    <Compile Include="Modelos\DepartamentoModel.cs" />
+    <Compile Include="Modelos\MedidorModel.cs" />
+    <Compile Include="Modelos\ModeloModel.cs" />
+    <Compile Include="Presenter\CondicionPresenter.cs" />
+    <Compile Include="Presenter\CondicionPruebaPresenter.cs" />
+    <Compile Include="Presenter\DepartamentoPresenter.cs" />
+    <Compile Include="Presenter\DescripcionPresenter.cs" />
+    <Compile Include="Presenter\IComunicacionPresenter.cs" />
+    <Compile Include="Presenter\MarcaPresenter.cs" />
+    <Compile Include="Presenter\MedidorPresenter.cs" />
+    <Compile Include="Presenter\ModeloPresenter.cs" />
+    <Compile Include="Presenter\OficinaPresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="General\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormComunicaciones.resx">
+      <DependentUpon>FormComunicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormConfMedidor.resx">
+      <DependentUpon>FormConfMedidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormDepartamentos.resx">
+      <DependentUpon>FormDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormDescripcion.resx">
+      <DependentUpon>FormDescripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormModelo.resx">
+      <DependentUpon>FormModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormRegistroMedidor.resx">
+      <DependentUpon>FormRegistroMedidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormRegistroOficina.resx">
+      <DependentUpon>FormRegistroOficina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormTipoCondicion.resx">
+      <DependentUpon>FormTipoCondicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormTipoCondicionPrueba.resx">
+      <DependentUpon>FormTipoCondicionPrueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\FormValidacion.resx">
+      <DependentUpon>FormValidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EDEESTE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opendoc_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opendoc_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Endidad\Endidad.csproj">
+      <Project>{976D0191-A9BD-4D50-8298-C0148977829B}</Project>
+      <Name>Endidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{5cf5c474-4c5f-4a45-9e67-1bd87b131da7}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{6121ba27-a89b-4efd-9b41-8503851a5c13}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

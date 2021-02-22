@@ -1,0 +1,599 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Edeeste.IRepository</name>
+    </assembly>
+    <members>
+        <member name="T:Edeeste.IRepository.DbConnectionHelper">
+            <summary>
+            Helper to build a DbConnectionObj based on App.Config.
+            The App.Config have to has appSttting like: (name="[name of connectionSring]+Timeout" value="0")
+            </summary>
+        </member>
+        <member name="M:Edeeste.IRepository.DbConnectionHelper.GetDbConnection(System.String)">
+            <summary>
+            Getting the DbConnectionObj corresponding to key of connectionStrings.
+            </summary>
+            <param name="key">Key of ConnectionString.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.DbConnectionHelper.GetDbConnectionOracle(System.String)">
+            <summary>
+            Getting the DbConnectionObj corresponding to key of connectionStrings.
+            </summary>
+            <param name="key">Key of ConnectionString.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Edeeste.IRepository.DbConnectionObj">
+            <summary>
+            It used to transfer the DbConnection and with her TimeOut that can be setted.
+            </summary>
+        </member>
+        <member name="P:Edeeste.IRepository.DbConnectionObj.DbConnection">
+            <summary>
+            DbConnection to be used by RepositoryBase.
+            </summary>
+        </member>
+        <member name="P:Edeeste.IRepository.DbConnectionObj.TimeOut">
+            <summary>
+            TimeOut to be used by TimeOut.
+            </summary>
+        </member>
+        <member name="T:Edeeste.IRepository.IRepositoryBaseAsync`1">
+            <summary>
+            This repository manager all stuff abount task and threading.
+            </summary>
+        </member>
+        <member name="P:Edeeste.IRepository.IRepositoryBaseAsync`1.CancellationToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBaseAsync`1.GetAsync">
+            <summary>
+            Get all based on table Name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBaseAsync`1.GetAsync(System.Collections.Generic.KeyValuePair{System.String,System.Int32})">
+            <summary>
+            Get a single element based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBaseAsync`1.GetAsync(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Get a single element based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBaseAsync`1.GetListAsync(System.Collections.Generic.KeyValuePair{System.String,System.Int32})">
+            <summary>
+            Get a Enumerable of elements based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBaseAsync`1.GetListAsync(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+             Get a Enumerable of elements based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBaseAsync`1.CountAsync">
+            <summary>
+            Get count of specific table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Edeeste.IRepository.IRepositoryBase`1">
+             <summary>
+            Interface that contains the operations Read.
+             </summary>
+             <typeparam name="T">Entity Poco</typeparam>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBase`1.Get">
+            <summary>
+            Get all based on table Name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBase`1.Get(System.Collections.Generic.KeyValuePair{System.String,System.Int32})">
+            <summary>
+            Get a single element based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBase`1.Get(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Get a single element based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBase`1.GetList(System.Collections.Generic.KeyValuePair{System.String,System.Int32})">
+            <summary>
+            Get a Enumerable of elements based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBase`1.GetList(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+             Get a Enumerable of elements based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryBase`1.Count">
+            <summary>
+            Get count of specific table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Edeeste.IRepository.IRepositoryOperationBase`1">
+            <summary>
+            Interface that contains the operations Create, Update and Delete.
+            </summary>
+            <typeparam name="T">Entity Poco</typeparam>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBase`1.Add(`0)">
+            <summary>
+            Add a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBase`1.Add(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBase`1.Update(`0)">
+            <summary>
+            Update a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBase`1.Update(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Update a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBase`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Delete a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBase`1.Delete(`0)">
+            <summary>
+            Delete a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="T:Edeeste.IRepository.IRepositoryOperationBaseAsync`1">
+            <summary>
+            Interface that contains the operations Create, Update and Delete.
+            </summary>
+            <typeparam name="T">Entity Poco</typeparam>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBaseAsync`1.AddAsync(`0)">
+            <summary>
+            Add a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBaseAsync`1.AddAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBaseAsync`1.UpdateAsync(`0)">
+            <summary>
+            Update a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBaseAsync`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Update a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBaseAsync`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Delete a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.IRepositoryOperationBaseAsync`1.DeleteAsync(`0)">
+            <summary>
+            Delete a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="T:Edeeste.IRepository.RepositoryBase`1">
+            <summary>
+            Repository base that are based on Micro-ORM Dapper, it has all the artifacts necessary to do CRUD SQL.
+            </summary>
+            <typeparam name="T">Entity POCO</typeparam>
+        </member>
+        <member name="P:Edeeste.IRepository.RepositoryBase`1.DbConnection">
+            <summary>
+            Current DbConnection.
+            </summary>
+        </member>
+        <member name="P:Edeeste.IRepository.RepositoryBase`1.CommandTimeout">
+            <summary>
+            Current commandTimeout.
+            </summary>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Get">
+            <summary>
+            Get all row about a specific table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Get(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Get a specific element over the condition "Where [Key] = [Value]".
+            </summary>
+            <param name="value">Condition Where [Key] = [Value].</param>
+            <returns>The entity found.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Get(System.Collections.Generic.KeyValuePair{System.String,System.Int32})">
+            <summary>
+            Get a specific element over the condition "Where [Key] = [Value]".
+            </summary>
+            <param name="value">Condition Where [Key] = [Value].</param>
+            <returns>The entity found.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.GetList(System.Collections.Generic.KeyValuePair{System.String,System.Int32})">
+            <summary>
+            Get all elements over the condition "Where [Key] = [Value]".
+            </summary>
+            <param name="value">Condition Where [Key] = [Value].</param>
+            <returns>List the entity found.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.GetList(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Get all elements over the condition "Where [Key] = [Value]".
+            </summary>
+            <param name="value">Condition Where [Key] = [Value].</param>
+            <returns>List the entity found.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Count">
+            <summary>
+            Get a number of rows.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.GetByStoredProcedure(System.String,System.Object)">
+            <summary>
+            Get a result of the execution of 
+            </summary>
+            <param name="storedProcedure"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Add(`0)">
+            <summary>
+            Insert a new row on the table.
+            </summary>
+            <param name="item">Entity POCO to insert.</param>
+            <returns>New id identity assigned.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Add(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Insert a list new row on the table.
+            </summary>
+            <param name="item">List of Entities POCOs to insert.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Update(`0)">
+            <summary>
+            Modify a row of the table.
+             </summary>
+            <param name="item">Entity Poco that have to has specified the identity property with IdentityAttribute.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Update(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Modify a list of row of the table.
+             </summary>
+            <param name="item">List Entity Poco that have to has specified the identity property with IdentityAttribute.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Delete(`0)">
+            <summary>
+            Remove a row of the table.
+            </summary>
+            <param name="item">Entity Poco that have to has specified the identity property with IdentityAttribute.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Remove a list the row of the table.
+            </summary>
+            <param name="item">List Entity Poco that have to has specified the identity property with IdentityAttribute.</param>
+        </member>
+        <member name="F:Edeeste.IRepository.RepositoryBase`1.DataTimeFormat">
+            <summary>
+            Format of date that is handled.
+            </summary>
+        </member>
+        <member name="F:Edeeste.IRepository.RepositoryBase`1.SelectIdentity">
+            <summary>
+            SQL Statement that return Scope Identity.
+            </summary>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.BuilderOfIn(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Build of IN SQL condition based on enumerable of values.
+            </summary>
+            <param name="values">Agglomerate terms.</param>
+            <returns> IN (values) </returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.BuilderOfIn(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Build of IN SQL condition based on enumerable of values.
+            </summary>
+            <param name="values">Agglomerate terms.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.GetTableName(System.Type)">
+            <summary>
+            Get the tablename form attribute [TableName] if is defiend, otherwise return name of entity poco. 
+            </summary>
+            <param name="type">Entity Poco.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.BuilderOfInsert``1(``0,System.Boolean)">
+            <summary>
+            Build a Insert SQL Statement based TX entity.
+            </summary>
+            <typeparam name="TX">Entity Poco</typeparam>
+            <param name="entity">Object to insert.</param>
+            <param name="returnId">Add select scope identity.</param>
+            <returns>SQL Statement.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.BuilderOfInsert``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Build a multiple Insert SQL Statement basado on TX entity.
+            </summary>
+            <typeparam name="TX">Entity Poco</typeparam>
+            <param name="enumerable">Enumearble entities.</param>
+            <returns>Enumerable SQL Statement</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.BuilderOfUpdate``1(``0)">
+            <summary>
+            Build a Update SQL Statement based on TX entity.
+            </summary>
+            <param name="entity">Object to update.</param>
+            <returns>SQL Statement.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.BuilderOfUpdate``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Build a multiple Update  SQL Statement based on TX entity.
+            </summary>
+            <typeparam name="TX">Entity Poco</typeparam>
+            <param name="enumerable">Enumearble entities.</param>
+            <returns>Enumerable SQL Statement</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.BuilderOfDelete``1(``0)">
+            <summary>
+            Build a Delete SQL Statement based on TX entity.
+            </summary>
+            <param name="entity">Entity Poco will be removed.</param>
+            <returns>SQL Statement.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.BuilderOfDelete``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Build a multiple Delete  SQL Statement based on TX entity.
+            </summary>
+            <param name="enumerable">Enumerable entities.</param>
+            <returns>Enumerable SQL Statement</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBase`1.ToDataTable(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Convert Ienumerable T of DataTable.
+            </summary>
+            <param name="enumerable">Enumerable entities to convert to DataRow.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Edeeste.IRepository.RepositoryBase`1.CancellationToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Edeeste.IRepository.RepositoryBasePlSql`1">
+            <summary>
+            Repository base that are based on Micro-ORM Dapper, it has all the artifacts necessary to do CRUD SQL.
+            </summary>
+            <typeparam name="T">Entity POCO</typeparam>
+        </member>
+        <member name="F:Edeeste.IRepository.RepositoryBasePlSql`1.DbConnection">
+            <summary>
+            Current DbConnection.
+            </summary>
+        </member>
+        <member name="P:Edeeste.IRepository.RepositoryBasePlSql`1.CommandTimeout">
+            <summary>
+            Current commandTimeout.
+            </summary>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.#ctor(Edeeste.IRepository.DbConnectionObj)">
+            <summary>
+            
+            </summary>
+            <param name="dbConnection"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Get">
+            <summary>
+            Get all based on table Name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Get(System.Collections.Generic.KeyValuePair{System.String,System.Int32})">
+            <summary>
+            Get a single element based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Get(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Get a single element based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.GetList(System.Collections.Generic.KeyValuePair{System.String,System.Int32})">
+            <summary>
+            Get a Enumerable of elements based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.GetList(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+             Get a Enumerable of elements based on Key = columnName and Value = columnValun.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Count">
+            <summary>
+            Get count of specific table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.GetByStoredProcedure(System.String,System.Object)">
+            <summary>
+            Get a result of the execution of 
+            </summary>
+            <param name="storedProcedure"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Add(`0)">
+            <summary>
+            Add a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Add(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Update(`0)">
+            <summary>
+            Update a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Update(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Update a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Delete a single element. 
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.Delete(`0)">
+            <summary>
+            Delete a Enumerable of elements.
+            If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item">Entity.</param>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.BuilderOfInsert``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Generate the statement sql to insert a list of items.
+            </summary>
+            <param name="entities"></param>
+            <typeparam name="TX"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.BuilderOfUpdate``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Generete the statement sql to update a list of items.
+            </summary>
+            <typeparam name="TX"></typeparam>
+            <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.BuilderOfDelete``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Generate the statement sql to delete a list of items.
+            </summary>
+            <typeparam name="TX"></typeparam>
+            <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.BuilderOfInsert``1(``0,System.Boolean)">
+            <summary>
+            Build a Insert SQL Statement based TX entity.
+            </summary>
+            <typeparam name="TX">Entity Poco</typeparam>
+            <param name="entity">Object to insert.</param>
+            <param name="returnId">Add select scope identity.</param>
+            <returns>SQL Statement.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.BuilderOfUpdate``1(``0)">
+            <summary>
+            Build a Update SQL Statement based on TX entity.
+            </summary>
+            <param name="entity">Object to update.</param>
+            <returns>SQL Statement.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.BuilderOfDelete``1(``0)">
+            <summary>
+            Build a Delete SQL Statement based on TX entity.
+            </summary>
+            <param name="entity">Entity Poco will be removed.</param>
+            <returns>SQL Statement.</returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.GetTableName(System.Type)">
+            <summary>
+            Get the tablename form attribute [TableName] if is defiend, otherwise return name of entity poco. 
+            </summary>
+            <param name="type">Entity Poco.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.IRepository.RepositoryBasePlSql`1.ToDataTable``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Convert Ienumerable T of DataTable.
+            </summary>
+            <param name="enumerable">Enumerable entities to convert to DataRow.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Edeeste.Exception.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:Edeeste.Exception.Controls.FrmWindowError">
+            <summary>
+            Display the exception.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Exception.Controls.FrmWindowError.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="applicationName">Name of application.</param>
+            <param name="exception">Exception</param>
+        </member>
+        <member name="F:Edeeste.Exception.Controls.FrmWindowError.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Exception.Controls.FrmWindowError.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Edeeste.Exception.Controls.FrmWindowError.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Edeeste.Exception.Controls.FrmWindowError.TitleForm">
+            <summary>
+            Title of form.
+            </summary>
+        </member>
+        <member name="T:Edeeste.Exception.Controls.HandlerException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Edeeste.Exception.Controls.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Edeeste.Exception.Controls.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Edeeste.Exception.Controls.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Edeeste.Exception.Controls.Properties.Resources.ErrorCircle_128">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

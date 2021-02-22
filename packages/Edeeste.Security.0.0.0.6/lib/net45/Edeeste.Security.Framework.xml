@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Edeeste.Security.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:Edeeste.Security.Framework.Attributes.PermissionAttribute">
+            <summary>
+            Attribute to assigne name of safeName and operation type must be has to execute this action.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Attributes.PermissionAttribute.#ctor(System.String,Edeeste.Security.Framework.Enums.OperationSecurityType)">
+            <summary>
+            
+            </summary>
+            <param name="areaSafeName"></param>
+            <param name="operationSecurityType"></param>
+        </member>
+        <member name="P:Edeeste.Security.Framework.Attributes.PermissionAttribute.Permit">
+            <summary>
+            if has permit to execute.
+            </summary>
+        </member>
+        <member name="P:Edeeste.Security.Framework.Attributes.PermissionAttribute.AreaSafeName">
+            <summary>
+            Area Safe
+            </summary>
+        </member>
+        <member name="P:Edeeste.Security.Framework.Attributes.PermissionAttribute.OperationSecurityType">
+            <summary>
+            Type of operation.
+            </summary>
+        </member>
+        <member name="T:Edeeste.Security.Framework.Enums.OperationSecurityType">
+            <summary>
+            Typies of operations.
+            </summary>
+        </member>
+        <member name="F:Edeeste.Security.Framework.Enums.OperationSecurityType.None">
+            <summary>
+            None operiones.
+            </summary>
+        </member>
+        <member name="F:Edeeste.Security.Framework.Enums.OperationSecurityType.Read">
+            <summary>
+            Operation to Read.
+            </summary>
+        </member>
+        <member name="F:Edeeste.Security.Framework.Enums.OperationSecurityType.Create">
+            <summary>
+            Operation to Create.
+            </summary>
+        </member>
+        <member name="F:Edeeste.Security.Framework.Enums.OperationSecurityType.Update">
+            <summary>
+            Operation to Update.
+            </summary>
+        </member>
+        <member name="F:Edeeste.Security.Framework.Enums.OperationSecurityType.Delete">
+            <summary>
+            Operation to Delete.
+            </summary>
+        </member>
+        <member name="T:Edeeste.Security.Framework.Exceptions.EdeEsteSecurityException">
+            <summary>
+            Exception to catch EdeEsteSecurity Exception.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Exceptions.EdeEsteSecurityException.#ctor(System.String,System.String,Edeeste.Security.Framework.Enums.OperationSecurityType[],System.Reflection.MethodInfo)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="userName"></param>
+            <param name="permitOnly"></param>
+            <param name="method"></param>
+        </member>
+        <member name="P:Edeeste.Security.Framework.Exceptions.EdeEsteSecurityException.PermitOnly">
+            <summary>
+            The permitted operations.
+            </summary>
+        </member>
+        <member name="P:Edeeste.Security.Framework.Exceptions.EdeEsteSecurityException.Method">
+            <summary>
+            Method who do the action.
+            </summary>
+        </member>
+        <member name="P:Edeeste.Security.Framework.Exceptions.EdeEsteSecurityException.UserName">
+            <summary>
+            Username of user who execute the action.
+            </summary>
+        </member>
+        <member name="T:Edeeste.Security.Framework.Security.EdeEsteSecurity">
+            <summary>
+            it is resopnsible for managing the initialization of UserSecurity and ManagerSecurity.
+            </summary>k
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.EdeEsteSecurity.InitializationDataBase(Edeeste.IRepository.DbConnectionObj,System.String)">
+            <summary>
+            Initializing UserSecurity and ManagerSecurity.
+            </summary>
+            <param name="dbConnection"></param>
+            <param name="domain"></param>
+        </member>
+        <member name="T:Edeeste.Security.Framework.Security.ManagerSecurity">
+            <summary>
+            Its reponsible  to managing Roles and AreaSafes.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.Initilization(Edeeste.Security.Framework.IRolService,Edeeste.Security.Framework.IAreaSafeService)">
+            <summary>
+            Initilizing a ManagerSecurity.
+            </summary>
+            <param name="rolService"></param>
+            <param name="areaSafeService"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.GetRol">
+            <summary>
+            Get all Rol.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.GetRol(System.Int32)">
+            <summary>
+            Get a specific rol based on id of rol.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.GetAreaSafe">
+            <summary>
+            Get all Area Safe.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.ExistsAreaSafe(System.String)">
+            <summary>
+            Validate whethen already exists.
+            </summary>
+            <param name="areaSafeName">name of AreaSafe.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.GetAreaSafe(System.Int32)">
+            <summary>
+            Get a specific AreaSafe based on id of areaSafe.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.Add(Edeeste.Security.Entities.Rol)">
+            <summary>
+            Create a new Rol.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.Add(Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Create a new AreaSafe.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.Update(Edeeste.Security.Entities.Rol)">
+            <summary>
+            Modify a specific Rol.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.Update(Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Modify a specific AreaSafe.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.Delete(Edeeste.Security.Entities.Rol)">
+            <summary>
+            Delete a specific Rol.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.Delete(Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Delete a specific AreaSafe.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.AddRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Add the relation between Rol and an areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.AddRelation(Edeeste.Security.Entities.Rol,System.Collections.Generic.IEnumerable{Edeeste.Security.Entities.AreaSafe})">
+            <summary>
+            Add the relation between Rol and an areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.UpdateRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Update relation between rol and areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.DeleteRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Delete a relation between Rol and AreaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.ManagerSecurity.DeleteRelation(Edeeste.Security.Entities.Rol,System.Collections.Generic.IEnumerable{Edeeste.Security.Entities.AreaSafe})">
+            <summary>
+            Delete a relation between Rol and AreaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="T:Edeeste.Security.Framework.Security.UserSecurity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Edeeste.Security.Framework.Security.UserSecurity.User">
+            <summary>
+            Current user session.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Initilization(Edeeste.Security.Framework.IUserService,System.String)">
+            <summary>
+            Initializing UserSecurity.
+            </summary>
+            <param name="userService"></param>
+            <param name="domain"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Logout">
+            <summary>
+            Log out 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Login(System.String,System.String)">
+            <summary>
+            Log in a user and opening a user session.
+            </summary>
+            <param name="userName"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Get">
+            <summary>
+            Get all user.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Registe(Edeeste.Security.Entities.User)">
+            <summary>
+            Create a user.
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Delete(Edeeste.Security.Entities.User)">
+            <summary>
+            Delete a user.
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Enable(Edeeste.Security.Entities.User)">
+            <summary>
+            Enable a specific user.
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Disable(Edeeste.Security.Entities.User)">
+            <summary>
+            Disable a specific user.
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.HasAccess(System.String)">
+            <summary>
+            Validate whethen current user logged has access a specific areasafe.
+            </summary>
+            <param name="areaSafe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.SufficientPermission(System.String,Edeeste.Security.Framework.Enums.OperationSecurityType)">
+            <summary>
+            Verify whethen current user has sufficient permission do specific operation to specific areaSafe.
+            </summary>
+            <param name="areaSafe"></param>
+            <param name="operationSecurityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Security.UserSecurity.Update(Edeeste.Security.Entities.User)">
+            <summary>
+            Modify a specific user.
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="T:Edeeste.Security.Framework.Services.AreaSafeService">
+            <summary>
+            Service AreaSafe
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Services.AreaSafeService.#ctor(Edeeste.Security.Intraestructure.Repositories.IAreaSafeRepository)">
+            <summary>
+            
+            </summary>
+            <param name="areaSafeRepository"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Edeeste.Security.Framework.Services.RolService">
+            <summary>
+            Rol Repository.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Services.RolService.#ctor(Edeeste.Security.Intraestructure.Repositories.IRolRepository)">
+            <summary>
+            
+            </summary>
+            <param name="rolRepository"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Edeeste.Security.Framework.Services.UserService">
+            <summary>
+            Service of User.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Services.UserService.#ctor(Edeeste.Security.Intraestructure.Repositories.IUserRepository,Edeeste.Security.Intraestructure.Repositories.IAreaSafeRepository)">
+            <summary>
+            
+            </summary>
+            <param name="userRepository"></param>
+            <param name="areaSafeRepository"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Services.UserService.Exists(System.String,System.String)">
+            <summary>
+            Validate whethen exists a specific user on domain.
+            </summary>
+            <param name="userName"></param>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Services.UserService.Validate(System.String,System.String,System.String)">
+            <summary>
+            Validate credentials on domain.
+            </summary>
+            <param name="userName"></param>
+            <param name="password"></param>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.Services.UserService.CheckUser(System.String,System.String)">
+            <summary>
+            Validad whethen username is on domain.
+            </summary>
+            <param name="userName"></param>
+            <param name="domain"></param>
+            <returns>User Poco with information from domain.</returns>
+        </member>
+    </members>
+</doc>

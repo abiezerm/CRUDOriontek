@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Edeeste.Security.Intraestructure.Repositories</name>
+    </assembly>
+    <members>
+        <member name="T:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository">
+            <summary>
+            It has all artifacts about areasafe to connect on DB.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.#ctor(Edeeste.IRepository.DbConnectionObj)">
+            <summary>
+            
+            </summary>
+            <param name="dbConnection"></param>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetById(System.Int32)">
+            <summary>
+            Get AreaSafe based on AreaSafe Id.
+            </summary>
+            <param name="id">Id of areaSafe.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Get AreaSafe based on AreaSafe Id.
+            </summary>
+            <param name="id">Id of areaSafe.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetAsync">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByName(System.String)">
+            <summary>
+            Get areaSafe based on Name.
+            </summary>
+            <param name="name">Name of areaSafe.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByNameAsync(System.String)">
+            <summary>
+            Get areaSafe based on Name.
+            </summary>
+            <param name="name">Name of areaSafe.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.Exists(System.String)">
+            <summary>
+            Verify whethen already areaSafe.
+            </summary>
+            <param name="name">name of areaSafe</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByParentId(System.Int32)">
+            <summary>
+            Get AreaSafes that dependent of a AreaSafe.
+            </summary>
+            <param name="id">Id of areaSafe that you want to get her childrens.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByParentIdAsync(System.Int32)">
+            <summary>
+            Get AreaSafes that dependent of a AreaSafe.
+            </summary>
+            <param name="id">Id of areaSafe that you want to get her childrens.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByRol(System.Int32)">
+            <summary>
+            Get areaSafe that are registed on specific rol.
+            </summary>
+            <param name="rolId">Id of Rol.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByRolAsync(System.Int32)">
+            <summary>
+            Get areaSafe that are registed on specific rol.
+            </summary>
+            <param name="rolId">Id of Rol.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetAccessLevel(System.String,System.String)">
+            <summary>
+            Get AccessLevel about a Rol and an AreaSafe.
+            </summary>
+            <param name="rolName"></param>
+            <param name="areaSafeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetAccessLevelAsync(System.String,System.String)">
+            <summary>
+            Get AccessLevel about a Rol and an AreaSafe.
+            </summary>
+            <param name="rolName"></param>
+            <param name="areaSafeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetAccessLevelByUserName(System.String,System.String)">
+            <summary>
+            Get AccessLevel about a userName and an AreaSafe.
+            </summary>
+            <param name="userName"></param>
+            <param name="areaSafeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetAccessLevelByUserNameAsync(System.String,System.String)">
+            <summary>
+            Get AccessLevel about a userName and an AreaSafe.
+            </summary>
+            <param name="userName"></param>
+            <param name="areaSafeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByUserId(System.Int32)">
+            <summary>
+            Get AreaSafe that is relation on User.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByUserIdAsync(System.Int32)">
+            <summary>
+            Get AreaSafe that is relation on User.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByAreaSafeName(System.String)">
+            <summary>
+            Get All rol that has a relation with a areasafe.
+            </summary>
+            <param name="areaSafeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.AreaSafeRepository.GetByAreaSafeNameAsync(System.String)">
+            <summary>
+            Get All rol that has a relation with a areasafe.
+            </summary>
+            <param name="areaSafeName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Edeeste.Security.Intraestructure.Repositories.RolRepository">
+            <summary>
+            Repository has all artifacts about Roles.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.#ctor(Edeeste.IRepository.DbConnectionObj,Edeeste.Security.Intraestructure.Repositories.IAreaSafeRepository)">
+            <summary>
+            
+            </summary>
+            <param name="dbConnection"></param>
+            <param name="areaSafeRepository"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.AddRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Add the relation between Rol and an areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.AddRelation(Edeeste.Security.Entities.Rol,System.Collections.Generic.IEnumerable{Edeeste.Security.Entities.AreaSafe})">
+            <summary>
+            Add the relation between Rol and an areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.UpdateRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Update relation between rol and areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.GetRelation(System.Int32,System.Int32)">
+            <summary>
+            Get Relation between Rol and AreaSafe.
+            </summary>
+            <param name="rolId"></param>
+            <param name="areaSafeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.DeleteRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Delete a relation between Rol and AreaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.DeleteRelation(Edeeste.Security.Entities.Rol,System.Collections.Generic.IEnumerable{Edeeste.Security.Entities.AreaSafe})">
+            <summary>
+            Delete a relation between Rol and AreaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.Exists(System.String)">
+            <summary>
+            Verify whethe already exists rol with this name.
+            </summary>
+            <param name="name">name of rol.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.GetByUserId(System.Int32)">
+            <summary>
+            Get rol based on user id.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.Get(System.Int32)">
+            <summary>
+            Get Rol based on rol id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.GetByUserName(System.String)">
+            <summary>
+            Get Rol based on UserName.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.GetByName(System.String)">
+            <summary>
+            Get rol by name of rol.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.RolRepository.GetByAreaSafeName(System.String)">
+            <summary>
+            Get All rol that has a relation with a areasafe.
+            </summary>
+            <param name="areaSafeName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Edeeste.Security.Intraestructure.Repositories.UserRepository">
+            <summary>
+            Repository of user.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.#ctor(Edeeste.IRepository.DbConnectionObj,Edeeste.Security.Intraestructure.Repositories.IRolRepository)">
+            <summary>
+            CTR.
+            </summary>
+            <param name="dbConnection"> </param>
+            <param name="rolRepository"></param>
+            <exception cref="T:System.ArgumentNullException">if RolRespository is null.</exception>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.Get">
+            <summary>
+            Get all based on table Name.
+            </summary>
+            <returns/>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetAsync">
+            <summary>
+            Get all based on table Name.
+            </summary>
+            <returns/>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetByRoleName(System.String)">
+            <summary>
+            Get all users based on roleName.
+            </summary>
+            <param name="roleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetByUserId(System.Int32)">
+            <summary>
+            Get user based on id of user.
+            </summary>
+            <param name="userId">Id of user to search.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetByUserName(System.String)">
+            <summary>
+            Get user basad on username of user.
+            </summary>
+            <param name="userName"> Username of user.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.IsOnline(System.String)">
+            <summary>
+            Check whether specific user is online.
+            </summary>
+            <param name="userName">username of user.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetOnline">
+            <summary>
+            Get all user current online.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.Get(System.Boolean)">
+            <summary>
+            Get all user based on enable.
+            </summary>
+            <param name="enable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.Exists(System.String)">
+            <summary>
+            Check if exists on database.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.Validate(System.String)">
+            <summary>
+            Validate whether exists and its enable.
+            </summary>
+            <param name="userName">username of user.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetByUserNameAsync(System.String)">
+            <summary>
+            Get specific user based on userName.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetByUserIdAsync(System.Int32)">
+            <summary>
+            Get specific user based on userName.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.IsOnlineAsync(System.String)">
+            <summary>
+            Validate if specific user is current online.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetOnlineAsync">
+            <summary>
+            Get all user online.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.GetAsync(System.Boolean)">
+            <summary>
+            Get all users enable.
+            </summary>
+            <param name="enable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.ExistsAsync(System.String)">
+            <summary>
+            Check if exists on database.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Intraestructure.Repositories.UserRepository.ValidateAsync(System.String)">
+            <summary>
+            Check whether exists on database and if is enable.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

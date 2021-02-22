@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Edeeste.Security.IFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Edeeste.Security.Framework.IAreaSafeService">
+            <summary>
+            Interfaces of Service of AreaSafe
+            </summary>
+        </member>
+        <member name="T:Edeeste.Security.Framework.IServiceOperationBase`1">
+            <summary>
+            Interface that contains the operations Create, Update and Delete.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Edeeste.Security.Framework.IServiceBase`1">
+            <summary>
+            Interface that contains the mechanism base to Get.
+            </summary>
+            <typeparam name="T">Entity Poco</typeparam>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IServiceBase`1.Get(System.Int32)">
+            <summary>
+            Get a specific item based on id of entity.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IServiceBase`1.Get">
+            <summary>
+            Get all item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IServiceOperationBase`1.Add(`0)">
+            <summary>
+            Add a single element. If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IServiceOperationBase`1.Update(`0)">
+            <summary>
+            Update a single element. If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IServiceOperationBase`1.Delete(`0)">
+            <summary>
+            Delete a Enumerable of elements. If the element has a field identity have to add attribute [Ignore] and [Identity].
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IAreaSafeService.Exists(System.String)">
+            <summary>
+            Verify whethen already areaSafe.
+            </summary>
+            <param name="areaSafe">name of areaSafe</param>
+            <returns></returns>
+        </member>
+        <member name="T:Edeeste.Security.Framework.IRolService">
+            <summary>
+            Interface of Rol service.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IRolService.AddRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Add the relation between Rol and an areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IRolService.AddRelation(Edeeste.Security.Entities.Rol,System.Collections.Generic.IEnumerable{Edeeste.Security.Entities.AreaSafe})">
+            <summary>
+            Add the relation between Rol and an areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IRolService.UpdateRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Update relation between rol and areaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IRolService.DeleteRelation(Edeeste.Security.Entities.Rol,Edeeste.Security.Entities.AreaSafe)">
+            <summary>
+            Delete a relation between Rol and AreaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IRolService.DeleteRelation(Edeeste.Security.Entities.Rol,System.Collections.Generic.IEnumerable{Edeeste.Security.Entities.AreaSafe})">
+            <summary>
+            Delete a relation between Rol and AreaSafe.
+            </summary>
+            <param name="rol"></param>
+            <param name="areaSafe"></param>
+        </member>
+        <member name="T:Edeeste.Security.Framework.IUserService">
+            <summary>
+            Service of user.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.HasAccess(System.String,System.String)">
+            <summary>
+            Verify whethen specific user has a access to specific areaSafe.
+            </summary>
+            <param name="userName"></param>
+            <param name="areaName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.GetAccessLevel(System.String,System.String)">
+            <summary>
+            Get a AccessLevel of User and AreaSafe
+            </summary>
+            <param name="userName"></param>
+            <param name="areaName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.Login(System.String,System.String,System.String)">
+            <summary>
+            Log in based a userName and password of domain.
+            </summary>
+            <param name="userName"></param>
+            <param name="password"></param>
+            <param name="domain"></param>
+            <returns> if wasn't  success return a null. </returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.LogOut(System.String)">
+            <summary>
+            Log out the user.
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.Validate(System.String,System.String)">
+            <summary>
+            Validate whether specific username exists on Domain and DataBase.
+            </summary>
+            <param name="userName"></param>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.GetByUserId(System.Int32)">
+            <summary>
+            Get a User based on Id of user.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.GetByUserName(System.String)">
+            <summary>
+            Get a User based on username of user.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.IsOnline(System.String)">
+            <summary>
+            Verify whethen specific user is online.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.GetOnline">
+            <summary>
+            Get all user that current is online.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.Get(System.Boolean)">
+            <summary>
+            Get all user based on Enable.
+            </summary>
+            <param name="enable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.Exists(System.String)">
+            <summary>
+            Verify whethen already exists a user.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.Enable(Edeeste.Security.Entities.User)">
+            <summary>
+            Change to enable for a specific user.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Edeeste.Security.Framework.IUserService.Disable(Edeeste.Security.Entities.User)">
+            <summary>
+            Change to Disable for a specific user.
+            </summary>
+            <param name="item"></param>
+        </member>
+    </members>
+</doc>

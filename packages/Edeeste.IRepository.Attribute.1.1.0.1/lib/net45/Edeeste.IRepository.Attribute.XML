@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Edeeste.IRepository.Attribute</name>
+    </assembly>
+    <members>
+        <member name="T:Edeeste.IRepository.Attribute.DataTypeAttribute">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="T:Edeeste.IRepository.Attribute.Identity">
+            <summary>
+            Identified the field that is Primary.
+            </summary>
+        </member>
+        <member name="T:Edeeste.IRepository.Attribute.Ignore">
+            <summary>
+            Ignore the property to get or insert process database
+            </summary>
+        </member>
+        <member name="T:Edeeste.IRepository.Attribute.TableName">
+            <summary>
+            Attribute thata specified name of table.
+            </summary>
+        </member>
+        <member name="P:Edeeste.IRepository.Attribute.TableName.TableNameWithScheme">
+            <summary>
+            Name of table with her scheme.
+            </summary>
+        </member>
+        <member name="M:Edeeste.IRepository.Attribute.TableName.#ctor(System.String,System.String)">
+            <summary>
+            Format [sheme].[TableName] to be used on RepositoryBase.
+            </summary>
+            <param name="scheme"></param>
+            <param name="tableName"></param>
+        </member>
+        <member name="M:Edeeste.IRepository.Attribute.TableName.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+        </member>
+    </members>
+</doc>

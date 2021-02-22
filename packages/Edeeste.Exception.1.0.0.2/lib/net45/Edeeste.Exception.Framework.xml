@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Edeeste.Exception.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:Edeeste.Exception.Framework.Attributes.HandlerExceptionAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Edeeste.Exception.Framework.Attributes.HandlerExceptionAttribute.#ctor(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="handlerException"></param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:Edeeste.Exception.Framework.Attributes.HandlerExceptionAttribute.HandlerException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Edeeste.Exception.Framework.ProxyHandlerException`1">
+            <summary>
+            Proxy to handler exception that occurent during a executing of an action.
+            The class must to has HandlerExceptionAttribute and pass by ctor type of class that implement IHandlerException.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Edeeste.Exception.Framework.ProxyHandlerException`1.#ctor(`0)">
+            <summary>
+            
+            </summary>
+            <param name="instance"></param>
+        </member>
+        <member name="M:Edeeste.Exception.Framework.ProxyHandlerException`1.Create(`0)">
+            <summary>
+            Create a TransparentProxy Instance basad on RealProxy.
+            </summary>
+            <param name="instance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edeeste.Exception.Framework.ProxyHandlerException`1.Invoke(System.Runtime.Remoting.Messaging.IMessage)">
+            <summary>
+            When overridden in a derived class, invokes the method that is specified in the provided <see cref="T:System.Runtime.Remoting.Messaging.IMessage"/> on the remote object that is represented by the current instance.
+            </summary>
+            <returns>
+            The message returned by the invoked method, containing the return value and any out or ref parameters.
+            </returns>
+            <param name="msg">A <see cref="T:System.Runtime.Remoting.Messaging.IMessage"/> that contains a <see cref="T:System.Collections.IDictionary"/> of information about the method call. </param><PermissionSet><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="Infrastructure"/></PermissionSet>
+        </member>
+        <member name="M:Edeeste.Exception.Framework.ProxyHandlerException`1.GetHandlerExceptionAttribute">
+            <summary>
+            Get a HanlerExcetionAttribute of current class instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Edeeste.Exception.Framework.IHandlerException">
+            <summary>
+            Interfaces that must to implement the classes to manager the exceptions.
+            </summary>
+        </member>
+        <member name="M:Edeeste.Exception.Framework.IHandlerException.Action(System.Exception)">
+            <summary>
+            Action to handler the exception.
+            </summary>
+            <param name="ex"></param>
+        </member>
+    </members>
+</doc>
